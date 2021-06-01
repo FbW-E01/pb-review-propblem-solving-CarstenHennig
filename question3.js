@@ -24,8 +24,9 @@ function bigData(objects) {
   myArray.push(objects);
   console.log(myArray);
 }
+let start = new Date().getMilliseconds();
+// Math.pow(10, 6) * 10 // takes approx. 1000000 milliseconds to generate
 for (i = 0; i < 10; i++) {
-  // takes xxx minutes to generate
   const idRandom = Math.ceil(Math.pow(9, Math.random() * 10));
   const startDateRandom = new Date(
     Math.random() * 30,
@@ -41,3 +42,5 @@ for (i = 0; i < 10; i++) {
     endDate: endDateRandom,
   });
 }
+let time = new Date().getMilliseconds();
+console.log(`Time of generating 10 objects: ${time - start} ms`);
